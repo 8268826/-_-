@@ -15,7 +15,7 @@ int main()
     }
     else
     {
-        printf("x= %g",(float)-b/a);
+        printf("x= %.2f",(float)-b/a);
     }
     return 0;
 }
