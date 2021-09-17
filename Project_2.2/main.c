@@ -17,7 +17,7 @@ int main()
         }
         else
         {
-            if(a>=x*x)
+            if(a>x*x)
             {
                 printf("w= %.2f",sqrt(a-x*x));
             }
