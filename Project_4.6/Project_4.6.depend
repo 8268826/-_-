@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1632258837 source:d:\1.file hoc tap\code\buoi 1\project_4.6\main.cpp
+	<iostream>
+	<cstring>
+	<conio.h>
+
