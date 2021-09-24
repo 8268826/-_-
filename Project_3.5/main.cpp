@@ -24,7 +24,7 @@ void Sort(string& str)
 int main()
 {
 	string str;
-	cout << "Input: " << endl;
+	cout << "Input string: " << endl;
 	cin >> str;
 	Sort(str);
 	cout << str << endl;
