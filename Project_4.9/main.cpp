@@ -1,6 +1,5 @@
 #include <iostream>
 #include <conio.h>
-#include <math.h>
 using namespace std;
 
 void Convert10ToAll(int n, int m)
@@ -53,7 +52,7 @@ EnterAgain:
 	ConvertStringToInt(str_value, p_value);
 	for (int i = 0; i < str_value.length(); i++)
 	{
-		if (p_value[i] >= ori_sys)
+		if (p_value[i] >= ori_sys || ori_sys < 2)
 		{
 			cout << "\n\nInput is false!" << endl;
 			delete[] p_value;
@@ -71,13 +70,20 @@ EnterAgain:
 	int i_value = ConverAllTo10(str_value, p_value, ori_sys);
 	while (true)
 	{
+	Enter_Sys_Cv_Again:
 		system("cls");
 		cout << "Original base " << ori_sys << " : " << str_value << endl;
 		cout << "Enter the numbering system you want to convert (2-16): ";
 		cin >> sys_convert;
+		if (sys_convert < 2)
+		{
+			cout << "\n\nInput is false!" << endl;
+			system("pause");
+			goto Enter_Sys_Cv_Again;
+		}
 		cout << "New base " << sys_convert << " : ";
 		Convert10ToAll(i_value, sys_convert);
-		cout << "\n\n Press Enter to switch to another numbering system,1 to enter the new system,0 to exit";
+		cout << "\n\n Press Enter to switch to another numbering system,1 to enter the new system, 0 to exit";
 		char c = _getch();
 		if (c == '0')
 			break;
