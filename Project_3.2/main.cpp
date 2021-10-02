@@ -14,6 +14,7 @@ int main()
         if(m1>m)
         {
             cout<<"p= "<<p<<endl;
+            break;
         }
     }
 
