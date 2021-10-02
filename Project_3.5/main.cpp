@@ -11,7 +11,7 @@ void Sort(string& str)
 			char tg2 = str[j];
 			if (tg1 >= 'A' && tg1 <= 'Z') tg1 += 31.5;
 			if (tg2 >= 'A' && tg2 <= 'Z') tg2 += 31.5;
-			if (tg1 >= tg2)
+			if (tg1 > tg2)
 			{
 				char temp = str[i];
 				str[i] = str[j];
