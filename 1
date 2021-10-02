@@ -1,60 +1,14 @@
-#include<stdio.h>
-#include<string.h>
-int main()
-{
-    char a[100];
-    char b[30];
-    char c[30];
-    int j = 0, maxlength = 0;
-
-    gets(a);
-
-    for(int i = 0; i <= strlen(a); i++){
-        if(a[i] != 32 && a[i] != '\0'){
-	    b[j++] = a[i];
-	}else{
-            b[j] = '\0';
-            if(strlen(b) > maxlength){
-                strcpy(c, b);
-                maxlength = strlen(b);
-            }
-            j = 0;
-        }
-    }puts(c); // output - result
-    j=0;
-    for(int i = 0; i <= strlen(a); i++)
-    {
-        if(a[i] != 32 && a[i] != '\0'){
-	    b[j++] = a[i];
-	}else{
-            b[j] = '\0';
-            if(strlen(b) == maxlength){
-                strcpy(c, b);
-                puts(c);
-            }
-            j = 0;
-        }
-    }
-    return 0;
-}
-
-
-#include <iostream>
-#include <string>
+#include <bits/stdc++.h>
 using namespace std;
 
-int main()
+void DeleteX(string& str)
 {
-	string str;
-	char c;
-	getline(cin, str);
-	cin >> c;
-	int j;
-	for (int i = 0; i < str.length(); i++)
-	{
-		if (str[i]==c)
-		{
-			j = i;
+    int j;
+    for(int i=0;i<str.length();i++)
+    {
+        if(str[i]>='A'&&str[i]<='z')
+        {
+            j = i;
 			while (str[j+1]!='\0')
 			{
 				str[j] = str[j + 1];
@@ -62,51 +16,28 @@ int main()
 			}
 			str[j] = '\0';
 			i--;
-		}
-	}
-	cout << str;
-
+        }
+    }
 }
 
-#include <iostream>
-using namespace std;
+void Sort(string str)
+{
+    for(int i=0;i<str.length();i++)
+    {
+
+    }
+}
+
 int main()
 {
-	int m, n, sumc = 0, sumh = 0;
-	cin >> m >> n;
-	int** a = new int* [m];
-	for (int i = 0; i < m; i++)
-	{
-		a[i] = new int[n];
-	}
-
-	for (int i = 0; i < m; i++)
-	{
-		for (int j = 0; j < n; j++)
-		{
-			cin >> a[i][j];
-		}
-	}
-	
-	for (int i = 0; i < m; i++)
-	{
-		sumc += a[i][i];
-	}
-	cout << sumc;
-
-	for (int i = 0; i < m; i++)
-	{
-		for (int j = 0; j < n; j++)
-		{
-			sumh += a[i][j];
-		}
-		cout << "a[" << i << "]= " << sumh << endl;
-		sumh = 0;
-	}
-
-	for (int i = 0; i < m; i++)
-	{
-		delete[] a[i];
-	}
-	delete[] a;
+    fstream input_1, input_2,output;
+    string str_1,str_2;
+    input_1.open("txt_1.txt",ios::out);
+    input_2.open("txt_2.txt",ios::out);
+    getline(cin,str_1);
+    DeleteX(str_1);
+    input_1<<str_1;
+    getline(cin,str_2);
+    input_2<<str_2;
+    return 0;
 }
