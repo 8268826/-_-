@@ -1,5 +1,4 @@
-#include <iostream>
-#include <math.h>
+#include <bits/stdc++.h>
 using namespace std;
 #define WIDTH 60
 #define HEIGHT 20
@@ -59,7 +58,7 @@ int main()
 	for (float i = -3.14159; i < 3.14159; i+=0.1)
 	{
 		float j = sin(i);
-		Init_Graph(rintf(i * 6), rintf(j * 7));
+		Init_Graph(rintf(i * 7), rintf(j * 9));
 	}
 	Show_Graph();
 	return 0;
