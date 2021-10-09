@@ -14,6 +14,7 @@ int main()
 	{
 		cin >> a;
 		input << a;
+		if(i<9)
 		input << ' ';
 	}
 	input.close();
