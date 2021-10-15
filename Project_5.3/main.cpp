@@ -65,22 +65,23 @@ int main()
     do
     {
         system("cls");
-        cout<<"1 .4.Поиск в тексте слова максимальной длины."<<endl;
-        cout<<"2. 36.Исключение из текстового файла заданных символов."<<endl;
+        cout<<"String: "<<str;
+        cout<<"4.Поиск в тексте слова максимальной длины."<<endl;
+        cout<<"36.Исключение из текстового файла заданных символов."<<endl;
         cout<<"Пожалуйста,выбери: "; cin>>select;
         switch(select)
         {
         default:
             break;
         case 0: break;
-        case 1:
+        case 4:
             {
                 cout<<"Самое длинное слово: "<<endl;
                 Ex4(str);
                 system("pause");
                 break;
             }
-        case 2:
+        case 36:
             {
                 Ex36(str);
                 system("pause");
