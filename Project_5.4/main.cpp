@@ -36,13 +36,13 @@ int main()
                     goto Again;
             case 45: {
                 int sum;
-                for (int i = 0; i < m; i++)
+                for (int i = 0; i < n; i++)
                 {
-                    for (int j = 0; j < n; j++)
+                    for (int j = 0; j < m; j++)
                     {
-                        sum += a[i][j];
+                        sum += a[j][i];
                     }
-                    cout << "a[" << i << "]= " << sum << endl;
+                    cout << "a[" << j << "]= " << sum << endl;
                     sum = 0;
                 }
                 system("pause");
