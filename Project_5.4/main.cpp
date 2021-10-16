@@ -4,14 +4,25 @@ using namespace std;
 int main()
 {
     setlocale(LC_ALL, "Rus");
+    B:
     int m, n, select;
     cout << "Введите количество столбцов: "; cin >> m;
     cout << "Введите количество строк: "; cin >> n;
-    int** a = new int* [m];
-    for (int i = 0; i < m; i++)
+    if(m<=0||n<=0)
     {
-        a[i] = new int[n];
+        cout<<"Input is false"<<endl;
+        system("pause");
+        system("cls");
+        cout<<"Re-enter: "<<endl;
+        goto B;
     }
+        int** a = new int* [m];
+    for (int i = 0; i < m; i++)
+        a[i] = new int[n];
+
+
+
+
 Again:
     cout << "Enter the matrix: " << endl;
     for (int i = 0; i < m; i++)
@@ -41,7 +52,6 @@ Again:
                 for (int j = 0; j < m; j++)
                 {
                     sum += a[j][i];
-
                 }
                 cout << "a[" << i << "]= " << sum << endl;
                 sum = 0;
