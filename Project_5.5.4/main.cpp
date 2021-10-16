@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <windows.h>
 using namespace std;
 
 void Sort(string &str)
@@ -30,7 +31,7 @@ int main()
 	SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 	int select;
-	string str;
+	string str,str1;
 	char c;
 	int i=0;
 	fstream input;
@@ -46,8 +47,9 @@ int main()
 		cin >> select;
 		if (select == 0)
 			break;
-		cin >> c;
-		str.push_back(c);
+        cin.ignore();
+		getline(cin,str1);
+		str.append(str1);
 		goto A;
 	}
 	return 0;
