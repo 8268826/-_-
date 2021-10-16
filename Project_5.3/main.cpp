@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <windows.h>
 using namespace std;
 void Ex4(char str[])
 {
@@ -57,7 +58,9 @@ void Ex36(char str[])
 }
 int main()
 {
-    setlocale(LC_ALL,"Ru");
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    //setlocale(LC_ALL,"Rus");
     char str[100];
     int select;
     cout<<"Введите строку: ";
@@ -65,7 +68,7 @@ int main()
     do
     {
         system("cls");
-        cout<<"String: "<<str;
+        cout<<"String: "<<str<<endl;
         cout<<"4.Поиск в тексте слова максимальной длины."<<endl;
         cout<<"36.Исключение из текстового файла заданных символов."<<endl;
         cout<<"Пожалуйста,выбери: "; cin>>select;
