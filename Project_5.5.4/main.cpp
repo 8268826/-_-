@@ -27,6 +27,8 @@ void Sort(string &str)
 
 int main()
 {
+	SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
 	int select;
 	string str;
 	char c;
