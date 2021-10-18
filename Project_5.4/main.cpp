@@ -3,6 +3,7 @@ using namespace std;
 
 int main()
 {
+    srand(time(NULL));
     setlocale(LC_ALL, "Rus");
     B:
     int m, n, select;
@@ -26,16 +27,18 @@ int main()
 Again:
     cout << "Enter the matrix: " << endl;
     for (int i = 0; i < m; i++)
-    {
         for (int j = 0; j < n; j++)
-        {
-            cout << "a[" << i << "][" << j << "]= ";
-            cin >> a[i][j];
-        }
-    }
+            a[i][j]=-10+rand()%21;
     do {
         system("cls");
-        cout << "1.Re-enter the matrix" << endl;
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+                cout<<a[i][j]<<" ";
+            cout<<endl;
+        }
+
+        cout << "1.Re-random the matrix" << endl;
         cout << "45).Написать программу, которая вводит по строкам с клавиатуры двумерный массив и вычисляет суммы его элементов по столбцам." << endl;
         cout << "47).Написать программу, которая вычисляет сумму диагональных элементов квадратной матрицы." << endl;
         cout << "Пожалуйста, выбери: "; cin >> select;
