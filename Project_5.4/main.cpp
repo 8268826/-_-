@@ -25,7 +25,6 @@ int main()
 
 
 Again:
-    cout << "Enter the matrix: " << endl;
     for (int i = 0; i < m; i++)
         for (int j = 0; j < n; j++)
             a[i][j]=-10+rand()%21;
