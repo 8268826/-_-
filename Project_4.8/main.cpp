@@ -4,7 +4,6 @@ using namespace std;
 void MaxMinA(float c[][2])
 {
 	float max = c[0][0], min = c[0][0],a=0,b=0;
-	cout<<"C:"<<endl;
 	for (int i = 0; i < 3; i++)
 	{
 		if (max > c[i][0])
