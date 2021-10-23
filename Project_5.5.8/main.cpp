@@ -66,7 +66,7 @@ int main()
                 input<<endl;
     }
     cout<<"Matrix C:"<<endl;
-    input<<"Matrix C:"<<endll;
+    input<<"Matrix C:"<<endl;
     for(int i=1;i<=m;i++)
     {
         for(int j=1;j<=m;j++)
