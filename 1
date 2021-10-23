@@ -16,3 +16,23 @@ int main()
     }
 }
 
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int a;
+    bool b=false;
+    a=1;
+    for(int i=0;i<100;i++)
+        for(int j=0;j<100;j++)
+        {
+            if(i*3+4*j==a)
+            {
+                b=true;
+                cout<<i<<endl<<j<<endl;
+                break;
+            }
+        }
+    if(!b)
+        cout<<0<<endl<<0;
+}
