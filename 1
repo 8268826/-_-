@@ -36,3 +36,25 @@ int main()
     if(!b)
         cout<<0<<endl<<0;
 }
+
+
+#include <iostream>
+using namespace std;
+
+int vippro(int k,int n)
+{
+	if (n == 1) return 1;
+	return k*vippro(k, n - 1);
+}
+
+int main()
+{
+	int m, n, k = 0;
+	cin >> m >> n;
+	for (int i = 1; i <= m; i++)
+	{
+		k += i;
+	}
+	n += 1;
+	cout << vippro(k,n) << endl;
+}
