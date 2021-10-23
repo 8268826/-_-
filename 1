@@ -1,80 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-void DeleteX(string& str)
-{
-    int j;
-    for(int i=0;i<str.length();i++)
-    {
-        if(str[i]>='A'&&str[i]<='z')
-        {
-            j = i;
-			while (str[j+1]!='\0')
-			{
-				str[j] = str[j + 1];
-				j++;
-			}
-			str[j] = '\0';
-			i--;
-        }
-    }
-}
-
-void Sort(string str)
-{
-    for(int i=0;i<str.length();i++)
-    {
-
-    }
-}
-
 int main()
 {
-    fstream input_1, input_2,output;
-    string str_1,str_2;
-    input_1.open("txt_1.txt",ios::out);
-    input_2.open("txt_2.txt",ios::out);
-    getline(cin,str_1);
-    DeleteX(str_1);
-    input_1<<str_1;
-    getline(cin,str_2);
-    input_2<<str_2;
-    return 0;
-}
-
-
-#include<iostream>
-#define MAX 20
-using namespace std;
-
-int n;
-int Bool[MAX] = { 0 };
-int A[MAX];
-
-void xuat() {
-    for (int i = 1; i <= n; i++)
-        cout << A[i] << " ";
-    cout << endl;
-}
-
-void Try(int k) {
-
-    for (int i = 1; i <= n; i++) {
-       
-        if (!Bool[i]) {
-            A[k] = i;
-            Bool[i] = 1;
-            if (k == n)
-                xuat();
-            else
-                Try(k + 1);
-            Bool[i] = 0;
+    int a,b,c,i;
+    a=20;b=10;c=60;
+    i=0;
+    while(true)
+    {
+        if(a+b*i>c)
+        {
+            cout<<i-1;
+            break;
         }
+        i++;
     }
 }
 
-int main() {
-    cout << "Mhap n: ";
-    cin >> n;
-    Try(1);
-}
