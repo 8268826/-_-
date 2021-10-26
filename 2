@@ -289,3 +289,39 @@ int main()
 	delete[] a;
 	return 0;
 }
+
+
+#include <iostream>
+using namespace std;
+
+unsigned long long GiaiThua(int n)
+{
+	if (n == 1 || n == 0)
+		return 1;
+	return n * GiaiThua(n - 1);
+}
+
+unsigned long long ToHop(int n, int k)
+{
+	return (GiaiThua(n) / (GiaiThua(k) * GiaiThua(n - k)));
+}
+
+int main()
+{
+	int n, m;
+	cin >> n >> m;
+	if (n < 1) n = 1;
+	for (int i = n; i <= m; i++)
+	{
+		int* a = new int[i+1];
+		for (int j = 1; j <= i; j++)
+		{			
+			a[j] = (1 / (float)i) * ToHop(i, j - 1) * ToHop(i, j);
+			cout << a[j] << " ";
+		}
+		cout << endl;
+		delete[] a;
+	}
+
+	return 0;
+}
