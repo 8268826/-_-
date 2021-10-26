@@ -239,3 +239,33 @@ int main()
 		cout << GiaiThua(2 * i) /(GiaiThua(i + 1)* GiaiThua(i))<< endl;
 	return 0;
 }
+
+#include <iostream>
+using namespace std;
+
+unsigned long long GiaiThua(int n)
+{
+	if (n==1||n==0)
+		return 1;
+	return n * GiaiThua(n - 1);
+}
+
+int main()
+{
+	int n, m;
+	cin >> n >> m;
+	if (n < 1) n = 1;
+	/*for (int i = n; i <= m; i++)
+		cout << GiaiThua(2 * i) /(GiaiThua(i + 1)* GiaiThua(i))<< endl;*/
+	for (int i = n; i <= m; i++)
+	{
+		int* a = new int[i];
+		a[0] = 1;
+		for (int j = 0; j < i; j++)
+		{
+			a[j] = a[i - j + 1];
+		}
+		delete[]a;
+	}
+	return 0;
+}
