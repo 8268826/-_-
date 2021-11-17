@@ -1,20 +1,20 @@
 #include <iostream>
 using namespace std;
 
-bool check(int n)
+bool check(float n)
 {
-	if (n <= 0 || n > 2e9)
+	if (n <= 0 || n > 2e9 || n != rintf(n))
 		return false;
 	return true;
 }
 
 int main()
 {
-	int a, b, c, i = 0;
+	float a, b, c, i = 0;
 	cout << "Input (a,b,c): " << endl;
-	Again:
+Again:
 	cin >> a >> b >> c;
-	if (!check(a)||!check(b)||!check(c)||a>c)
+	if (!check(a) || !check(b) || !check(c) || a > c)
 	{
 		cout << "Input is falsed!" << endl;
 		system("pause");
