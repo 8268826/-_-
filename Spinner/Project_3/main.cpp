@@ -1,21 +1,27 @@
 #include <iostream>
 using namespace std;
 
-int spiners(int k,int n)
+bool check(float n)
 {
-	if (n == 1) return 1;
-	return k*spiners(k, n - 1);
+	if (n <= 0 || n > 75000 || n != rintf(n))
+		return false;
+	return true;
 }
 
 int main()
 {
-	int m, n, k = 0;
-	cout<<"Input (N,M): "<<endl;
-	cin >> m >> n;
-	for (int i = 1; i <= m; i++)
+	float m, n;
+	cout << "Input (N,M): " << endl;
+Again:
+	cin >> n >> m;
+	if (!check(n) || !check(m))
 	{
-		k += i;
+		cout << "Input is falsed!" << endl;
+		system("pause");
+		system("cls");
+		cout << "Re-input: ";
+		goto Again;
 	}
-	n += 1;
-	cout <<"Output: "<< spiners(k,n) << endl;
+	int output = (m + 1) * m / 2 * (n + 1) * n / 2;
+	cout << "Output: " << output << endl;
 }
