@@ -13,13 +13,9 @@ void Create_a_list_of_seats(int a[][B])
 		a[0][j] = a[0][j - 1] + 2;
 		a[1][j] = a[1][j - 1] + 2;
 		if (j % 2 != 0)
-		{
 			a[2][j] = a[2][j - 1] + 1;
-		}
 		else
-		{
 			a[2][j] = a[2][j - 1] - 3;
-		}
 	}
 }
 
@@ -27,18 +23,10 @@ int Xac_Dinh_Ghe(int n, int a[][B], int x[])
 {
 	int sum = 0;
 	for (int i = 0; i < A; i++)
-	{
 		for (int j = 0; j < B; j++)
-		{
 			for (int k = 0; k < n; k++)
-			{
 				if (x[k] == a[i][j])
-				{
 					a[i][j] = 0;
-				}
-			}
-		}
-	}
 	for (int i = 0; i < B; i++)
 	{
 		if (a[0][i] == 0)
@@ -62,7 +50,7 @@ int main()
 {
 	int a[A][B], n;
 	Create_a_list_of_seats(a);
-	cout << "Number of seats: "; cin >> n;
+	cout << "Number of free seats: "; cin >> n;
 	int* x = new int[n];
 	cout << "INPUT: " << endl;
 	for (int i = 0; i < n; i++)
