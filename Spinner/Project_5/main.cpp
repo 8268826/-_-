@@ -8,7 +8,7 @@ int main()
 Again:
 	cout << "Input (n,k): "; cin >> n >> k;
 	demmax = n;
-	if (n < 1 || k < 1)
+	if (n < 1 || k < 1 || n < k)
 	{
 		cout << "Input is falsed!" << endl;
 		system("pause");
@@ -29,15 +29,15 @@ Again:
 		for (int i = 0; i <= n; i++)
 		{
 			if (a[i] == 0)
-			{
 				dem++;
-			}
-			if (dem >= demmax && a[i] == 1)
+			else if (dem >= demmax && a[i] ==1)
 			{
 				demmax = dem;
 				dem = 0;
 				q = i;
 			}
+			else dem = 0;
+			
 		}
 		q--;
 		a[q - demmax / 2] = 1;
