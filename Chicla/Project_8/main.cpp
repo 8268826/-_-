@@ -3,19 +3,28 @@ using namespace std;
 
 unsigned long long Factorial(int n)
 {
-	if (n==1||n==0)
+	if (n == 1 || n == 0)
 		return 1;
 	return n * Factorial(n - 1);
 }
 
+unsigned long long Katalana(int n)
+{
+	return Factorial(2 * n) / (Factorial(n + 1) * Factorial(n));
+}
+
 int main()
 {
-	int n, m;
-	cout<<"Input (m,n): "<<endl;
+	int n, m, i = 1;
+	cout << "Input (m,n): " << endl;
 	cin >> n >> m;
 	if (n < 1) n = 1;
-	cout<<"Output: "<<endl;
-	for (int i = n; i <= m; i++)
-		cout << Factorial(2 * i) /(Factorial(i + 1)* Factorial(i))<< endl;
+	cout << "Output: " << endl;
+	while (true)
+	{
+		if (Katalana(i) >= n && Katalana(i) <= m) cout << Katalana(i) << " ";
+		else if (Katalana(i) > m) break;
+		i++;
+	}
 	return 0;
 }
