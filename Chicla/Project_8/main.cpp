@@ -17,7 +17,16 @@ int main()
 {
 	int n, m, i = 1;
 	cout << "Input (m,n): " << endl;
+Again:
 	cin >> n >> m;
+	if (m < n || n < 0)
+	{
+		cout << "Input is falsed!" << endl;
+		system("pause");
+		system("cls");
+		cout << "Re-input (m,n): ";
+		goto Again;
+	}
 	cout << "Output: " << endl;
 	while (true)
 	{
