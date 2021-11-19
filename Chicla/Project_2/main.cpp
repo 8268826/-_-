@@ -12,7 +12,7 @@ bool check(int &x)
 		}
 
 	}
-	if (sum==x)
+	if (sum==2)
 	{
 		return 1;
 	}
