@@ -18,7 +18,6 @@ int main()
 	int n, m, i = 1;
 	cout << "Input (m,n): " << endl;
 	cin >> n >> m;
-	if (n < 1) n = 1;
 	cout << "Output: " << endl;
 	while (true)
 	{
