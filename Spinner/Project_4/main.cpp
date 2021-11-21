@@ -1,3 +1,39 @@
+#include <iostream> 
+#include <locale>
+using namespace std;
+
+void condition(double& num) {
+	while (num > 54 || num < 1 || num != rintf(num)){
+		cout << "Ввод неправилный!\nВведите еще раз: ";
+		cin >> num;
+	}
+}
+
+int main()
+{
+	setlocale(LC_ALL, "Rus");
+	bool Hang[55] = { false };
+	double n, count = 0, total = 0;
+	cout << "Количество мест (int)[1;54]: ";
+	cin >> n; condition(n);
+	double* seats = new double[n];
+	cout << "Номера мест (int)[1;54]: " << endl;
+	for (int i = 0; i < n; i++){
+		cin >> seats[i];
+		condition(seats[i]);
+		Hang[(int)seats[i]] = true;
+	}
+	for (int i = 0; i < 55; i++){
+		count++;
+		if (!Hang[i]) count = 0;
+		if (count == 4 && Hang[(56 - (i / 2))] && Hang[(55 - (i / 2))]) total++;
+	}
+	cout << "Вывод: " << total;
+	delete[] seats;
+	return 0;
+}
+
+
 #include <iostream>
 #define A 3
 #define B 18
