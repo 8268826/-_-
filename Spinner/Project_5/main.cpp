@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-	deque<int> tuan;
+	deque<int> seats;
 	int n, k;
 	cout << "Input (n,k): ";
 Again:
@@ -19,16 +19,16 @@ Again:
 		cout << "Re-input (n,k): ";
 		goto Again;
 	}
-	tuan.push_back(n);
+	seats.push_back(n);
 	while (k > 0)
 	{
-		tuan.push_back(n / 2);
-		tuan.push_front((n - 1) / 2);
-		for (int i = 0; i < tuan.size(); i++) if (tuan[i] == *max_element(tuan.begin(), tuan.end()))
-			tuan.erase(tuan.begin() + i);
-		n = *max_element(tuan.begin(), tuan.end());
+		seats.push_back(n / 2);
+		seats.push_front((n - 1) / 2);
+		for (int i = 0; i < seats.size(); i++) if (seats[i] == *max_element(seats.begin(), seats.end()))
+			seats.erase(seats.begin() + i);
+		n = *max_element(seats.begin(), seats.end());
 		k--;
 	}
-	cout << tuan.front() << " " << tuan.back();
+	cout << seats.front() << " " << seats.back();
 	return 0;
 }
